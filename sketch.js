@@ -6,6 +6,9 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var backgroundImg;
 var hour;
+var response;
+var responseJSON;
+var datetime;
 
 var bg = "sunrise.png";
 
@@ -43,15 +46,15 @@ function draw(){
 async function getBackgroundImg(){
 
     // write code to fetch time from API
-    var respone = await fetch("http://worldtimeapi.org/api/timezone/europe/berlin") 
+    var response = await fetch("http://worldtimeapi.org/api/timezone/asia/kolkata") 
  
     //change the data in JSON format and store it in variable responseJSON
-    var responeJSON = await respone.json();
+    var responseJSON = await response.json();
 
 
     
     //fetch datetime from responseJSON
-    var datetime = responeJSON.datetime;
+    var datetime = responseJSON.datetime;
 
     
 
